@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Home from "./pages/homePage/home";
+import Signup from "./pages/signup/signup";
+import Login from "./pages/login/login";
 
-function App() {
+const App = () => {
+  const [currentPage, setCurrentPage] = useState("home");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {currentPage === "home" && <Home setCurrentPage={setCurrentPage} />}
+      {currentPage === "signup" && <Signup setCurrentPage={setCurrentPage} />}
+      {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
     </div>
   );
-}
+};
 
 export default App;
