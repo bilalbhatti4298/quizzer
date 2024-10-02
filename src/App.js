@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Home from "./pages/homePage/home";
 import Signup from "./pages/signup/signup";
+import Welcome from "./pages/welcome/welcome";
 import Login from "./pages/login/login";
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("welcome");
 
   return (
     <div>
-      {currentPage === "home" && <Home setCurrentPage={setCurrentPage} />}
+      {currentPage === "welcome" && <Welcome setCurrentPage={setCurrentPage} />}
       {currentPage === "signup" && <Signup setCurrentPage={setCurrentPage} />}
       {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
     </div>
